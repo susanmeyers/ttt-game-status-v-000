@@ -30,20 +30,38 @@ end
 
 
 def full?(board)
+  board.all? {|space| space != " " }
+  #board.all?{|token| token == "X" || token == "O"}
 
-  full?(board) ==["X", "O", "X", "O", "X", "X", "O", "X", "O"]
-  full?(board).each do |token|
-     return true
-   end
+end
+
+def draw?(board)
+  full?(board) && !won?(board)
+end
+
+
+def over?(board)
+  if won?(board) || draw?(board) || full?(board)
+    return true
+  else
     return false
   end
+end
 
 
-  def draw?(board)
+def winner(board)
+  if won?(board) == "X"
+    return "X"
+  elsif won?(board) == "O"
+    return "O"
+  end
+end
+  
 
-    draw?(board) == ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
 
-    if draw?(board) 
+
+
+
 
 
 
