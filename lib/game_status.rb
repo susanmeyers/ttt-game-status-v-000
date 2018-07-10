@@ -1,3 +1,4 @@
+require 'pry'
 WIN_COMBINATIONS = [
 [0, 1, 2],
 [3, 4, 5],
@@ -50,6 +51,7 @@ end
 
 
 def winner(board)
+binding.pry
   if won?(board) == "X"
     return "X"
   elsif won?(board) == "O"
