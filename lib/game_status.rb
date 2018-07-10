@@ -58,32 +58,15 @@ end
 
 def winner(board)
 #binding.pry
-  if board[won?(board).first] == "X"
-    return "X"
-  elsif board[won?(board).first] == "O"
-    return "O"
+  win_combo = won?(board)
+
+  if win_combo != false
+    if board[win_combo.first] == "X"
+      return "X"
+    else# board[win_combo.first] == "O"
+      return "O"
+    end
+  else
+    return nil
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  #
