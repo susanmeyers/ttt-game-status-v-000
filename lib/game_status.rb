@@ -49,12 +49,18 @@ def over?(board)
   end
 end
 
+# won?(board) = [0, 4, 8]
+# board[0] = "X"
+# [0, 4, 8] == "X"
+# [0, 4, 8].first = 0
+# board[won?(board).first]
+# board[0], 4, 8]
 
 def winner(board)
-binding.pry
-  if won?(board) == "X"
+#binding.pry
+  if board[won?(board).first] == "X"
     return "X"
-  elsif won?(board) == "O"
+  elsif board[won?(board).first] == "O"
     return "O"
   end
 end
